@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 import uglify from 'rollup-plugin-uglify'
 
 let pluginOptions = [
@@ -9,7 +10,8 @@ let pluginOptions = [
   babel({
     exclude: 'node_modules/**'
   }),
-  uglify()
+  uglify(),
+  commonjs({})
 ];
 
 module.exports = {
